@@ -1,12 +1,13 @@
 #include "main.h"
 #include <stdarg.h>
+#include <string.h>
 
 /**
- * handleString - handle the string
+ * handle_string - handle the string
  * @str: the string
  * @count: the pointer
  */
-void handle_str(char *str, int *count)
+void handle_string(char *str, int *count)
 {
 	int x;
 
@@ -17,7 +18,7 @@ void handle_str(char *str, int *count)
 	}
 	else
 	{
-		x = stlen(str);
+		x = strlen(str);
 		write(1, str, x);
 		*count += x;
 	}

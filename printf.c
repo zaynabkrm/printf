@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-	if (Invalid_format(format))
+	if (invalid_format(format))
 		return (-1);
 	while (*format)
 	{

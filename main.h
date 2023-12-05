@@ -12,10 +12,10 @@
 
 int _printf(const char *format, ...);
 void print_integer(int num, int *count);
-void handle_str(char *str, int *count);
+void handle_string(char *str, int *count);
 void handle_char(int c, int *count);
 bool invalid_format(const char *format);
-int _stlen(char *str);
+int _strlen(char *str);
 
 int _putchar(char c);
 
