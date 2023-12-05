@@ -5,20 +5,14 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
-
-<<<<<<< HEAD
-=======
 #define BUFF_SIZE 1024
 
 int _strlen(const char *str);
 int _printf(const char *format, ...);
 void print_integer(int num, int *count);
 void handle_char(int c, int *count);
->>>>>>> 06a6a916763538f90556a67ce93e567f4d125ac1
 int _putchar(char c);
 int _printf(const char * const format, ...);
 void print_buffer(char buffer[], int *buff_ind);
-void handle_char(int c, int *count);
-
 
 #endif
