@@ -7,7 +7,7 @@
  * Return: true if the format string is invalid, false otherwise.
 */
 
-bool invali_format(const char *format)
+bool invalid_format(const char *format)
 {
 	if (!format || (format[0] == '%' && !format[1]))
 		return (true);
