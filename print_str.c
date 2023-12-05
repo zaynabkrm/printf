@@ -22,7 +22,7 @@ int _strlen(char *str)
  * return: i
  */
 
-int _strlen(const char *str)
+int _strlenc(const char *str)
 
 {
 	int i;
