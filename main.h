@@ -14,5 +14,7 @@ int _strlen(char *str);
 int _strlen(const char *str);
 void handle_char(int c, int *count);
 int _putchar(char c);
+int print_37(void);
+
 
 #endif
