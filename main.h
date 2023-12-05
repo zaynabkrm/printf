@@ -6,10 +6,9 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-
-int _strlen(const char *str);
-void handle_char(int c, int *count);
 int _putchar(char c);
+int _printf(const char * const format, ...)
+void handle_char(int c, int *count);
 
 
 #endif
