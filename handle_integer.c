@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * printInteger - print numbers that produces output according to a format.
+ *  print_integer - print numbers that produces output according to a format.
  * @num: parameter number.
  * @count: parameter number.
  * by Zaynab&Reham
