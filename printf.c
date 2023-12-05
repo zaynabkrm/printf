@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 					handle_char(va_arg(args, int), &count);
 					break;
 				case 's':
-					handle_str(va_arg(args, char *), &count);
+					handle_string(va_arg(args, char *), &count);
 					break;
 				case 'd':
 				case 'i':
