@@ -13,6 +13,5 @@ void print_integer(int num, int *count);
 void handle_char(int c, int *count);
 int _putchar(char c);
 int _printf(const char * const format, ...);
-void print_buffer(char buffer[], int *buff_ind);
 
 #endif
