@@ -1,49 +1,55 @@
+#include <stdarg.h>
+#include <unistd.h>
 #include "main.h"
 
 /**
- * _printf - prints anything
- * @format: the format string
- *
- * Return: number of bytes printed
+ * _printf - produces output according to a format
+ * @format: argument
+ * by Zaynab&Reham
+ * Return: the number of charcters
  */
 int _printf(const char *format, ...)
 {
-	int sum = 0;
-	va_list ap;
-	char *p, *start;
-	params_t params = PARAMS_INIT;
+	int count = 0;
+	va_list args;
 
-	va_start(ap, format);
-
-	if (!format || (format[0] == '%' && !format[1]))
+	va_start(args, format);
+	if (Invalid_format(format))
 		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
-	for (p = (char *)format; *p; p++)
+	while (*format)
 	{
-		init_params(&params, ap);
-		if (*p != '%')
+		if (*format == '%')
 		{
-			sum += _putchar(*p);
-			continue;
+			format++;
+			switch (*format)
+			{
+				case 'c':
+					handle_char(va_arg(args, int), &count);
+					break;
+				case 's':
+					handle_str(va_arg(args, char *), &count);
+					break;
+				case 'd':
+				case 'i':
+					print_integer(va_arg(args, int), &count);
+					break;
+				case '%':
+					write(1, "%", 1);
+					count++;
+					break;
+				default:
+					write(1, format - 1, 2);
+					count += 2;
+					break;
+			}
 		}
-		start = p;
-		p++;
-		while (get_flag(p, &params)) /* while char at p is flag char */
-		{
-			p++; /* next char */
-		}
-		p = get_width(p, &params, ap);
-		p = get_precision(p, &params, ap);
-		if (get_modifier(p, &params))
-			p++;
-		if (!get_specifier(p))
-			sum += print_from_to(start, p,
-				params.l_modifier || params.h_modifier ? p - 1 : 0);
 		else
-			sum += get_print_func(p, ap, &params);
+		{
+			write(1, format, 1);
+			count++;
+		}
+		format++;
 	}
-	_putchar(BUF_FLUSH);
-	va_end(ap);
-	return (sum);
+	va_end(args);
+	return (count);
 }
