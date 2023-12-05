@@ -8,6 +8,7 @@
 
 
 int _strlen(const char *str);
+int _printf(const char *format, ...);
 void handle_char(int c, int *count);
 int _putchar(char c);
 
