@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "main.h"
-
 /**
  * _printf - produces output according to a format
  * @format: argument
@@ -39,16 +38,11 @@ int _printf(const char *format, ...)
 				default:
 					write(1, format - 1, 2);
 					count += 2;
-					break;
-			}
-		}
+					break; } }
 		else
-		{
 			write(1, format, 1);
 			count++;
-		}
-		format++;
-	}
+			format++; }
 	va_end(args);
 	return (count);
 }
