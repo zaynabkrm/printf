@@ -40,8 +40,9 @@ int _printf(const char *format, ...)
 					count += 2;
 					break; } }
 		else
+		{
 			write(1, format, 1);
-			count++;
+			count++; }
 			format++; }
 	va_end(args);
 	return (count);
